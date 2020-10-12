@@ -17,9 +17,8 @@ def main():
 
   balances = {}
   for a in output['data']:
-    if not a['type'] == 'accounts':
-      next
-    balances[a['attributes']['displayName']] = float(a['attributes']['balance']['value'])
+    if a['type'] == 'accounts':
+      balances[a['attributes']['displayName']] = float(a['attributes']['balance']['value'])
 
   total = 0
   for b in balances:
